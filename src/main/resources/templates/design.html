@@ -15,7 +15,7 @@
 <img th:src="@{/images/taco.png}"/>
 
 
-<form method="POST" th:object="${design}">
+<form method="POST" th:action="@{/design}" th:object="${taco}">
 
     <div th:if="${#fields.hasErrors()}" >
         <span>Please, correct the errors below</span>

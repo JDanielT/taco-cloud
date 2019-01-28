@@ -12,14 +12,14 @@
 <body>
 
 
-<form method="POST" th:action="@{/orders}" th:object="${order}" >
+<h1>Order your taco creations!</h1>
 
-    <h1>Order your taco creations!</h1>
+<img th:src="@{/images/taco.png}"/>
+<a th:href="@{/design}">Design another taco</a><br/>
 
-    <img th:src="@{/images/taco.png}"/>
-    <a th:href="@{/design}">Design another taco</a><br/>
+<form method="POST" th:action="@{/orders}" th:object="${order}">
 
-    <div th:if="${#fields.hasErrors()}" >
+    <div th:if="${#fields.hasErrors()}">
         <span>Please, correct the errors below</span>
     </div>
 
@@ -49,7 +49,7 @@
 
     <label for="ccNumber">Credit Card #: </label>
     <input type="text" th:field="*{ccNumber}"/>
-    <span th:errors="*{ccNumber}" ></span>
+    <span th:errors="*{ccNumber}"></span>
     <br/>
 
     <label for="ccExpiration">Expiration: </label>
