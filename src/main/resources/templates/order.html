@@ -49,6 +49,7 @@
 
     <label for="ccNumber">Credit Card #: </label>
     <input type="text" th:field="*{ccNumber}"/>
+    <span th:errors="*{ccNumber}" ></span>
     <br/>
 
     <label for="ccExpiration">Expiration: </label>

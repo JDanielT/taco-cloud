@@ -17,6 +17,10 @@
 
 <form method="POST" th:object="${design}">
 
+    <div th:if="${#fields.hasErrors()}" >
+        <span>Please, correct the errors below</span>
+    </div>
+
     <div class="grid">
 
         <div>
@@ -65,6 +69,7 @@
 
         <h3>Name your taco creation:</h3>
         <input type="text" th:field="*{name}"/>
+        <span th:errors="*{name}" ></span>
 
         <br/>
 
