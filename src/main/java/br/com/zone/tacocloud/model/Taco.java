@@ -9,6 +9,8 @@ import java.util.List;
 @Data
 public class Taco {
 
+    private Long id;
+
     @NotBlank(message="Name is required")
     private String name;
 
