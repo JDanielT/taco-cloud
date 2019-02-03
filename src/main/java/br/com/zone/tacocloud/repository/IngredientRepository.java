@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public interface IngredientRepository {
 
-    Iterable<Ingredient> findAll();
+    List<Ingredient> findAll();
     Ingredient findOne(String id);
     Ingredient save(Ingredient ingredient);
 
