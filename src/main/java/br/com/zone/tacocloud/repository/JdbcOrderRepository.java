@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class JdbcOrderRepository implements OrderRepository {
 
     private long saveOrderInfo(Order order) {
         Map<String, Object> values = objectMapper.convertValue(order, Map.class);
-        values.put("placedAt", new Date());
+        values.put("placedAt", new Timestamp(new Date().getTime()));
         return orderInsert.executeAndReturnKey(values).longValue();
     }
 

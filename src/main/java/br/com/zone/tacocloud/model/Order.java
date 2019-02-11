@@ -49,6 +49,9 @@ public class Order {
 
     private Date placedAt;
 
+    @ManyToOne
+    private User user;
+
     @PrePersist
     void placedAt() {
         this.placedAt = new Date();
